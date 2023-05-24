@@ -1,1 +1,1 @@
-alert("Hola :D")
+alert(Date())
