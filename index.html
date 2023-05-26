@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,37 @@
     <link rel="stylesheet" href="./CSS/style.css">
     <script src="./JS/script.js"></script>
 </head>
+
 <body>
     <main>
-    <section>
-        <h1>Jogo da Velha</h1>
-    </section>
-    <section class="tabuleiro">
-    <div>
-        <input type="button" value=" " id="btn1" onclick="clickBtn1()">
-        <input type="button" value=" " id="btn2" onclick="clickBtn2()">
-        <input type="button" value=" " id="btn3" onclick="clickBtn3()">
-    </div>
-    <div>
-        <input type="button" value=" " id="btn4" onclick="clickBtn4()">
-        <input type="button" value=" " id="btn5" onclick="clickBtn5()">
-        <input type="button" value=" " id="btn6" onclick="clickBtn6()">
-    </div>
-    <div>
-        <input type="button" value=" " id="btn7" onclick="clickBtn7()">
-        <input type="button" value=" " id="btn8" onclick="clickBtn8()">
-        <input type="button" value=" " id="btn9" onclick="clickBtn9()">
-    </div>
-    </section>
-    <section></section>
-</main>
+        <section>
+            <h1>Jogo da Velha</h1>
+        </section>
+        <section class="tabuleiro">
+            <div>
+                <input type="button" value=" " id="btn1" onclick="clickBtn1()">
+                <input type="button" value=" " id="btn2" onclick="clickBtn2()">
+                <input type="button" value=" " id="btn3" onclick="clickBtn3()">
+            </input>
+            <div>
+                <input type="button" value=" " id="btn4" onclick="clickBtn4()">
+                <input type="button" value=" " id="btn5" onclick="clickBtn5()">
+                <input type="button" value=" " id="btn6" onclick="clickBtn6()">
+            </div>
+            <div>
+                <input type="button" value=" " id="btn7" onclick="clickBtn7()">
+                <input type="button" value=" " id="btn8" onclick="clickBtn8()">
+                <input type="button" value=" " id="btn9" onclick="clickBtn9()">
+            </div>
+        </section>
+        <section>
+            <span id="lblJogador">...</span>
+            <br><br>
+            <span id="lblJogadas">...</span>
+        </section>
+        <br><br>
+        <input type="button" onclick="location.reload()" value="Jogar novamente">
+    </main>
 </body>
+
 </html>
