@@ -13,21 +13,32 @@
         <section>
             <h1>Jogo da Velha</h1>
         </section>
+        <section class="personagens">
+            <div id="p1" onclick="p1()">
+                <img src="./img/108248455-removebg-preview.png">
+                <img src="./img/127757407-removebg-preview.png">
+            </div>
+            <div id="p2" onclick="p2()">
+                <img src="./img/p3.png" alt="">
+                <img src="./img/p4.png" alt="">
+            </div>
+            
+        </section>
         <section class="tabuleiro">
             <div class="linha">
-                <div type="button" id="btn1" onclick="clickBtn1()"></div>
-                <div type="button" id="btn2" onclick="clickBtn2()"></div>
-                <div type="button" id="btn3" onclick="clickBtn3()"></div>
+                <div id="btn1" onclick="clickBtn1()"></div>
+                <div id="btn2" onclick="clickBtn2()"></div>
+                <div id="btn3" onclick="clickBtn3()"></div>
             </div>
             <div class="linha">
-                <div type="button" id="btn4" onclick="clickBtn4()"></div>
-                <div type="button" id="btn5" onclick="clickBtn5()"></div>
-                <div type="button" id="btn6" onclick="clickBtn6()"></div>
+                <div id="btn4" onclick="clickBtn4()"></div>
+                <div id="btn5" onclick="clickBtn5()"></div>
+                <div id="btn6" onclick="clickBtn6()"></div>
             </div>
             <div class="linha">
-                <div type="button" id="btn7" onclick="clickBtn7()"></div>
-                <div type="button" id="btn8" onclick="clickBtn8()"></div>
-                <div type="button" id="btn9" onclick="clickBtn9()"></div>
+                <div id="btn7" onclick="clickBtn7()"></div>
+                <div id="btn8" onclick="clickBtn8()"></div>
+                <div id="btn9" onclick="clickBtn9()"></div>
             </div>
         </section>
         <section>
@@ -76,6 +87,22 @@
         background-color: rgb(65, 114, 248);
     }
 
+    .personagens div {
+        width: 85px;
+        height: 185px;
+        margin: 5px;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 6px;
+        font-size: 70px;
+        cursor: pointer;
+        background-color: rgb(75, 75, 75);
+    }
+
+    .personagens{
+        position: fixed;
+        margin-left: -100px;
+    }
+
     .tabuleiro div div:hover {
         background-color: rgb(17, 79, 250);
     }
@@ -101,7 +128,6 @@
 
     .linha {
         display: flex;
-
     }
 
     #reiniciar {
@@ -132,22 +158,32 @@
     let controle = 0;
     let jogadas = 0;
     let final_jogo = false;
-    img_O = '<img src="img/108248455-removebg-preview.png">'
-    img_X = '<img src="img/127757407-removebg-preview.png">'
+    renan = '<img src="img/108248455-removebg-preview.png">'
+    cassio = '<img src="img/127757407-removebg-preview.png">'
+    player1 = renan
+    player2 = cassio
 
+    function p1(){
+        player1 = '<img src="img/108248455-removebg-preview.png">'
+        player2 = '<img src="img/127757407-removebg-preview.png">'
+    }
 
+    function p2(){
+        player1 = '<img src="img/p3.png">'
+        player2 = '<img src="img/p4.png">'
+    }
 
     // //botão 1
     function clickBtn1() {
         if (btn1 == 0 && !final_jogo) {
             if (controle == 0) {
                 controle = 1
-                document.getElementById("btn1").innerHTML = img_X
+                document.getElementById("btn1").innerHTML = player1
                 btn1 = "X"
             } else {
                 controle = 0
                 btn1 = "O"
-                document.getElementById("btn1").innerHTML = img_O
+                document.getElementById("btn1").innerHTML = player2
             }
             jogada()
         }
@@ -159,11 +195,11 @@
             if (controle == 0) {
                 controle = 1
                 btn2 = "X"
-                document.getElementById("btn2").innerHTML = img_X
+                document.getElementById("btn2").innerHTML = player1
             } else {
                 controle = 0
                 btn2 = "O"
-                document.getElementById("btn2").innerHTML = img_O
+                document.getElementById("btn2").innerHTML = player2
             }
             jogada()
 
@@ -176,11 +212,11 @@
             if (controle == 0) {
                 controle = 1
                 btn3 = "X"
-                document.getElementById("btn3").innerHTML = img_X
+                document.getElementById("btn3").innerHTML = player1
             } else {
                 controle = 0
                 btn3 = "O"
-                document.getElementById("btn3").innerHTML = img_O
+                document.getElementById("btn3").innerHTML = player2
             }
             jogada()
         }
@@ -192,11 +228,11 @@
             if (controle == 0) {
                 controle = 1
                 btn4 = "X"
-                document.getElementById("btn4").innerHTML = img_X
+                document.getElementById("btn4").innerHTML = player1
             } else {
                 controle = 0
                 btn4 = "O"
-                document.getElementById("btn4").innerHTML = img_O
+                document.getElementById("btn4").innerHTML = player2
             }
             jogada()
         }
@@ -208,11 +244,11 @@
             if (controle == 0) {
                 controle = 1
                 btn5 = "X"
-                document.getElementById("btn5").innerHTML = img_X
+                document.getElementById("btn5").innerHTML = player1
             } else {
                 controle = 0
                 btn5 = "O"
-                document.getElementById("btn5").innerHTML = img_O
+                document.getElementById("btn5").innerHTML = player2
             }
             jogada()
         }
@@ -225,11 +261,11 @@
             if (controle == 0) {
                 controle = 1
                 btn6 = "X"
-                document.getElementById("btn6").innerHTML = img_X
+                document.getElementById("btn6").innerHTML = player1
             } else {
                 controle = 0
                 btn6 = "O"
-                document.getElementById("btn6").innerHTML = img_O
+                document.getElementById("btn6").innerHTML = player2
             }
             jogada()
         }
@@ -243,11 +279,11 @@
             if (controle == 0) {
                 controle = 1
                 btn7 = "X"
-                document.getElementById("btn7").innerHTML = img_X
+                document.getElementById("btn7").innerHTML = player1
             } else {
                 controle = 0
                 btn7 = "O"
-                document.getElementById("btn7").innerHTML = img_O
+                document.getElementById("btn7").innerHTML = player2
             }
             jogada()
         }
@@ -260,11 +296,11 @@
             if (controle == 0) {
                 controle = 1
                 btn8 = "X"
-                document.getElementById("btn8").innerHTML = img_X
+                document.getElementById("btn8").innerHTML = player1
             } else {
                 controle = 0
                 btn8 = "O"
-                document.getElementById("btn8").innerHTML = img_O
+                document.getElementById("btn8").innerHTML = player2
             }
             jogada()
         }
@@ -277,11 +313,11 @@
             if (controle == 0) {
                 controle = 1
                 btn9 = "X"
-                document.getElementById("btn9").innerHTML = img_X
+                document.getElementById("btn9").innerHTML = player1
             } else {
                 controle = 0
                 btn9 = "O"
-                document.getElementById("btn9").innerHTML = img_O
+                document.getElementById("btn9").innerHTML = player2
             }
             jogada()
         }
@@ -304,19 +340,19 @@
 
         if ((btn1 == 'X' && btn2 == 'X' && btn3 == 'X') || (btn4 == 'X' && btn5 == 'X' && btn6 == 'X') || (btn7 == 'X' && btn8 == 'X' && btn9 == 'X')) {
             final_jogo = true
-            lblJogador.innerText = 'O Jogador Renan ganhou'
+            lblJogador.innerText = 'O Jogador 1 ganhou'
             y = "X"
 
         }
         if ((btn1 == 'X' && btn4 == 'X' && btn7 == 'X') || (btn2 == 'X' && btn5 == 'X' && btn8 == 'X') || (btn3 == 'X' && btn6 == 'X' && btn9 == 'X')) {
             final_jogo = true
-            lblJogador.innerText = 'O Jogador Renan ganhou'
+            lblJogador.innerText = 'O Jogador 1 ganhou'
             y = "X"
 
         }
         if ((btn1 == 'X' && btn5 == 'X' && btn9 == 'X') || (btn3 == 'X' && btn5 == 'X' && btn7 == 'X')) {
             final_jogo = true
-            lblJogador.innerText = 'O Jogador Renan ganhou'
+            lblJogador.innerText = 'O Jogador 1 ganhou'
             y = "X"
 
         }
@@ -324,19 +360,19 @@
 
         if ((btn1 == 'O' && btn2 == 'O' && btn3 == 'O') || (btn4 == 'O' && btn5 == 'O' && btn6 == 'O') || (btn7 == 'O' && btn8 == 'O' && btn9 == 'O')) {
             final_jogo = true
-            lblJogador.innerText = 'O Jogador Cássio ganhou'
+            lblJogador.innerText = 'O Jogador 2 ganhou'
             y = "O"
 
         }
         if ((btn1 == 'O' && btn4 == 'O' && btn7 == 'O') || (btn2 == 'O' && btn5 == 'O' && btn8 == 'O') || (btn3 == 'O' && btn6 == 'O' && btn9 == 'O')) {
             final_jogo = true
-            lblJogador.innerText = 'O Jogador Cássio ganhou'
+            lblJogador.innerText = 'O Jogador 2 ganhou'
             y = "O"
 
         }
         if ((btn1 == 'O' && btn5 == 'O' && btn9 == 'O') || (btn3 == 'O' && btn5 == 'O' && btn7 == 'O')) {
             final_jogo = true
-            lblJogador.innerText = 'O Jogador Cássio ganhou'
+            lblJogador.innerText = 'O Jogador 2 ganhou'
             y = "O"
 
         }
@@ -356,6 +392,8 @@
         }
         lblJogadas.innerText = '( jogada ' + (jogadas) + ' de 9' + ')'
     }
+
+    
 </script>
 
 </html>
