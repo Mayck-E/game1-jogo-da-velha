@@ -47,7 +47,7 @@ function clickBtn2() {
             document.getElementById("btn2").innerHTML = img_O
         }
         jogada()
-        
+
     }
 }
 
@@ -174,60 +174,62 @@ function clickBtn9() {
 function jogada() {
     jogadas += 1
     verificaJogador()
-    lblJogadas.innerText = jogadas
     if (jogadas == 9) {
         final_jogo = true
-        alert("fim das jogadas")
-        if(y == X || y == O){
-            img_O = '<img src="img/108248455-removebg-preview.png">'
-            img_X = '<img src="img/108248455-removebg-preview.png">'
-        }
-
+        alert("Deu velha")
     }
+
 }
 
 function verificaJogador() {
     let lblJogador = document.getElementById("lblJogador")
-    let lblJogadas = document.getElementById("lblJogadas")
+    let lblJogadas = document.getElementById("lblJogadas", "/9")
 
-    if ((btn1 == 'X' && btn2 == 'X' && btn3 == 'X') || (btn4=='X' && btn5=='X' && btn6=='X') || (btn7=='X' && btn8=='X' && btn9=='X')) {
+    if ((btn1 == 'X' && btn2 == 'X' && btn3 == 'X') || (btn4 == 'X' && btn5 == 'X' && btn6 == 'X') || (btn7 == 'X' && btn8 == 'X' && btn9 == 'X')) {
         final_jogo = true
         lblJogador.innerText = 'O Jogador Renan ganhou'
         y = "X"
-        return
+
     }
-    if ((btn1 == 'X' && btn4 == 'X' && btn7 == 'X') || (btn2=='X' && btn5=='X' && btn8=='X') || (btn3=='X' && btn6=='X' && btn9=='X')) {
+    if ((btn1 == 'X' && btn4 == 'X' && btn7 == 'X') || (btn2 == 'X' && btn5 == 'X' && btn8 == 'X') || (btn3 == 'X' && btn6 == 'X' && btn9 == 'X')) {
         final_jogo = true
         lblJogador.innerText = 'O Jogador Renan ganhou'
         y = "X"
-        return
+
     }
-    if ((btn1 == 'X' && btn5 == 'X' && btn9 == 'X') || (btn3=='X' && btn5=='X' && btn7=='X')) {
+    if ((btn1 == 'X' && btn5 == 'X' && btn9 == 'X') || (btn3 == 'X' && btn5 == 'X' && btn7 == 'X')) {
         final_jogo = true
         lblJogador.innerText = 'O Jogador Renan ganhou'
         y = "X"
-        return
+
     }
 
 
-    if ((btn1 == 'O' && btn2 == 'O' && btn3 == 'O') || (btn4=='O' && btn5=='O' && btn6=='O') || (btn7=='O' && btn8=='O' && btn9=='O')) {
+    if ((btn1 == 'O' && btn2 == 'O' && btn3 == 'O') || (btn4 == 'O' && btn5 == 'O' && btn6 == 'O') || (btn7 == 'O' && btn8 == 'O' && btn9 == 'O')) {
         final_jogo = true
         lblJogador.innerText = 'O Jogador Cássio ganhou'
         y = "O"
-        return
-    }
-    if ((btn1 == 'O' && btn4 == 'O' && btn7 == 'O') || (btn2=='O' && btn5=='O' && btn8=='O') || (btn3=='O' && btn6=='O' && btn9=='O')) {
-        final_jogo = true
-        lblJogador.innerText = 'O Jogador Cássio ganhou'
-        y = "O"
-        return
-    }
-    if ((btn1 == 'O' && btn5 == 'O' && btn9 == 'O') || (btn3=='O' && btn5=='O' && btn7=='O')) {
-        final_jogo = true
-        lblJogador.innerText = 'O Jogador Cássio ganhou'
-        y = "O"
-        return
-    }
 
-    lblJogadas.innerText = '(' + (jogadas) + 'ª jogada'
+    }
+    if ((btn1 == 'O' && btn4 == 'O' && btn7 == 'O') || (btn2 == 'O' && btn5 == 'O' && btn8 == 'O') || (btn3 == 'O' && btn6 == 'O' && btn9 == 'O')) {
+        final_jogo = true
+        lblJogador.innerText = 'O Jogador Cássio ganhou'
+        y = "O"
+
+    }
+    if ((btn1 == 'O' && btn5 == 'O' && btn9 == 'O') || (btn3 == 'O' && btn5 == 'O' && btn7 == 'O')) {
+        final_jogo = true
+        lblJogador.innerText = 'O Jogador Cássio ganhou'
+        y = "O"
+
+    }
+    if (final_jogo == true) {
+        var divBtn1 = document.getElementById("img");
+        var imgElement = divBtn1.getElementsByTagName("img")[0];
+
+        // Removendo o elemento img
+        divBtn1.removeChild(imgElement);
+
+    }
+    lblJogadas.innerText = '( jogada ' + (jogadas) + ' de 9' + ')'
 }
