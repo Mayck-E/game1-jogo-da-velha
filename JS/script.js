@@ -224,7 +224,7 @@ function verificaJogador() {
 
     }
     if (final_jogo == true) {
-        var divBtn1 = document.getElementById("img");
+        var divBtn1 = document.getElementById("linha"); //vc parou aq
         var imgElement = divBtn1.getElementsByTagName("img")[0];
 
         // Removendo o elemento img
