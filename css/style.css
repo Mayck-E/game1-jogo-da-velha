@@ -88,3 +88,15 @@ img {
     border-radius: 10px;
     background-color: rgb(44, 101, 255);
 }
+
+#resultado img{
+    width: 15rem;
+}
+
+#resultado{
+    position: fixed;
+    font-variant: small-caps;
+    margin-left: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+}
