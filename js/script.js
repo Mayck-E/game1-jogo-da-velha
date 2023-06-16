@@ -16,8 +16,11 @@ cassio = '<img src="img/127757407-removebg-preview.png">'
 velha = '<img src="img/claudemir.jpg">'
 player1 = renan
 player2 = cassio
+som = new Audio ('')
 
-
+function sound(){
+    som.play()
+}
 function p1(){
     player1 = '<img src="img/108248455-removebg-preview.png">'
     player2 = '<img src="img/127757407-removebg-preview.png">'
